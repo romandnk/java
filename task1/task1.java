@@ -99,7 +99,7 @@ public class task1 {
         return a + b - 1;
     }
     //9
-    public static int sumOfCubes(int[] a) {
+    public static int sumOfCugbes(int[] a) {
         int result = 0;
         for (int i = 0; i < a.length; i++) {
             result += a[i] * a[i] * a[i];
@@ -108,10 +108,13 @@ public class task1 {
     }
     //10
     public static boolean abcmath(int a, int b, int c) {
-        int add = 0;
-        for (int i = 0; i < b; i++) {
-            add += a;
+        int result = 0;
+
+        for(int i = 0; i < b; i++) {
+            result += a * 2;
+            a *= 2;
         }
-        return add / c == 0;
+
+        return result % c == 0;
     }
 }
