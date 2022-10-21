@@ -99,7 +99,7 @@ public class task1 {
         return a + b - 1;
     }
     //9
-    public static int sumOfCugbes(int[] a) {
+    public static int sumOfCubes(int[] a) {
         int result = 0;
         for (int i = 0; i < a.length; i++) {
             result += a[i] * a[i] * a[i];
