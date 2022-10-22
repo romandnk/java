@@ -1,7 +1,6 @@
 package homework2;
-
+import org.apache.commons.math3.util.Precision;
 import java.util.Scanner;
-
 public class Lab1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -32,8 +31,21 @@ public class Lab1 {
             System.out.println("The coordinates match");
             return;
         } else {
-            double area = Point3d.computeArea(firstPoint, secondPoint, thirdPoint);
+            double area = computeArea(firstPoint, secondPoint, thirdPoint);
             System.out.println("Area is " + area);
         }
+    }
+
+    public static double computeArea(Point3d first, Point3d second, Point3d third) {
+        double firstSide = first.distanceTo(second);
+        double secondSide = second.distanceTo(third);
+        double thirdSide = third.distanceTo(first);
+
+        if (firstSide >= (secondSide+thirdSide) || secondSide >= (firstSide+thirdSide) || thirdSide >= (firstSide+secondSide)) {
+            System.out.println("The sum of any two sides must be greater than the third");
+            return -1;
+        }
+        double p = (firstSide + secondSide + thirdSide) / 2;
+        return Precision.round(Math.sqrt(p*(p-firstSide)*(p-secondSide)*(p-thirdSide)),2);
     }
 }

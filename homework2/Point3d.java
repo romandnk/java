@@ -3,6 +3,7 @@ package homework2;
 import org.apache.commons.math3.util.Precision;
 
 import java.io.ObjectInputStream;
+import java.util.Objects;
 
 public class Point3d extends Point2d {
 
@@ -30,16 +31,11 @@ public class Point3d extends Point2d {
         return Precision.round(distance,2);
     }
 
-    public static double computeArea(Point3d first, Point3d second, Point3d third) {
-        double firstSide = first.distanceTo(second);
-        double secondSide = second.distanceTo(third);
-        double thirdSide = third.distanceTo(first);
-
-        if (firstSide >= (secondSide+thirdSide) || secondSide >= (firstSide+thirdSide) || thirdSide >= (firstSide+secondSide)) {
-            System.out.println("The sum of any two sides must be greater than the third");
-            return -1;
-        }
-        double p = (firstSide + secondSide + thirdSide) / 2;
-        return Precision.round(Math.sqrt(p*(p-firstSide)*(p-secondSide)*(p-thirdSide)),2);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point3d point3d = (Point3d) o;
+        return Double.compare(point3d.zCoord, zCoord) == 0;
     }
 }
