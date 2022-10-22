@@ -36,6 +36,6 @@ public class Point3d extends Point2d {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Point3d point3d = (Point3d) o;
-        return Double.compare(point3d.zCoord, zCoord) == 0;
+        return Double.compare(point3d.getX(), getX()) == 0 && Double.compare(point3d.getY(), getY()) == 0 && Double.compare(point3d.zCoord, zCoord) == 0;
     }
 }
