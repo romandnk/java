@@ -9,7 +9,6 @@ public class task4 {
     static{
         Collections.addAll(VOWEL_SYMBOLS, 'A', 'E', 'I', 'O', 'U', 'Y', 'a','e','i','o','u','y');
     }
-
     public static void main(String[] args) {
         System.out.println("1 task:");
         System.out.println(formatByBessie(10, 7,"hello my name is Bessie and this is my essay"));

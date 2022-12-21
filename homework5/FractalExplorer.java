@@ -37,7 +37,7 @@ public class FractalExplorer {
     public void createAndShowGUI() {
         display.setLayout(new BorderLayout());
         JFrame myFrame = new JFrame("Fractal Explorer");
-
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         myFrame.add(display, BorderLayout.CENTER);
 

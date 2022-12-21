@@ -36,3 +36,4 @@ public class Mandelbrot extends FractalGenerator{
         return iteration;
     }
 }
+
